@@ -81,12 +81,12 @@ var locationElement = document.getElementById("location");
 var boxGeoObject = new THREE.Object3D();
 var box = new THREE.Object3D();
 var loader = new THREE.TextureLoader();
-loader.load('box.png', function (texture) {
-    var geometry = new THREE.BoxGeometry(1, 1, 1);
-    var material = new THREE.MeshBasicMaterial({ map: texture });
-    var mesh = new THREE.Mesh(geometry, material);
-    box.add(mesh);
-});
+
+var geometry = new THREE.CylinderBufferGeometry( 1, 1, 4, 20 );
+var material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+var mesh = new THREE.Mesh(geometry, material);
+box.add(mesh)
+
 boxGeoObject.add(box);
 var boxGeoEntity = new Argon.Cesium.Entity({
     name: "I have a box",
