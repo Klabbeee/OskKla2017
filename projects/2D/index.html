@@ -5,7 +5,13 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-
+  <div id="demoMap" style="height:250px"></div>
+  	<script src="../OpenLayers-2.13.1/OpenLayers.js"></script>
+	<script>
+    	map = new OpenLayers.Map("demoMap");
+    	map.addLayer(new OpenLayers.Layer.OSM());
+    	map.zoomToMaxExtent();
+	</script>
 
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
