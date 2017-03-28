@@ -8,15 +8,20 @@
     <link href="../node_modules/mfb/src/mfb.css" rel="stylesheet">
   </head>
   <body>
-  
+
+
+    <!-- Searchbox and menu button -->
     <div class="box">
       <div class="search-box">
           <span href="javascript:void(0)" class="openbtn" onclick="openNav()">&#9776;</span>
-          <input type="search" id="search" placeholder="Search..." />
+          <input type="search" id="search" placeholder="Sök plats/objekt" />
       </div>
     </div>
 
 
+
+
+  <!-- Action buttons -->
   <ul class="mfb-component--br mfb-slidein" data-mfb-toggle="click" data-mfb-state="closed">
   	<li class="mfb-component__wrap">
       <!-- the main menu button -->
@@ -37,21 +42,28 @@
   	</li>
   </ul>
 
+
+  <!-- sidebar menu, close button and content -->
   <div id="mySidenav" class="sidenav">
+    <div id ="header" class="header">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    </div>
     <ul>
       <li class="first"><a href="#">Lager</a></li>
-      <li><a href="#">Uppgifter</a></li>
-      <li class="third"><a href="#">Uppgifter</a></li>
-      <li><a href="#">LINK</a></li>
+      <li><a href="#">Uppgifter</a></li><hr>
+      <li class="third"><a href="#">Support</a></li>
+      <li><a href="#">Inställningar</a></li>
       <li class="last"><a href="#">Logga ut</a></li>
     </ul>
-<!--  .menu ul li:first-child a {}
-.menu ul li:last-child a {} -->
   </div>
 
+<!--  .menu ul li:first-child a {}
+.menu ul li:last-child a {} 
+.menu ul li.first a {}
+-->
   
 
+  <!-- Map div -->
   <div id="map" class="map"></div>
 
   </body>
