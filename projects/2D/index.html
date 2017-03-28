@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
+<!--     <script src="../OpenLayers-2.13.1/OpenLayers.js"></script>-->
+    <script src="https://openlayers.org/en/v4.0.1/build/ol.js" type="text/javascript"></script>
     <link src="../resources/lib/bootstrap-3.3.7/css/bootstrap.min.css"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-  <div id="demoMap" style="height:250px"></div>
-  	<script src="../OpenLayers-2.13.1/OpenLayers.js"></script>
-	<script>
-    	map = new OpenLayers.Map("demoMap");
-    	map.addLayer(new OpenLayers.Layer.OSM());
-    	map.zoomToMaxExtent();
-	</script>
 
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a>
+    <a href="#">Lager</a>
+    <a href="#">Uppgifter</a>
+    <a href="#">Support</a>
+    <a href="#">Inställningar</a>
+    <a href="#">Logga ut</a>
   </div>
 
   <div id="main">
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
   </div>
+
+  <div id="map" class="map"></div>
+  	
 
   </body>
   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
