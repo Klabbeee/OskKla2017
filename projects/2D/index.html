@@ -9,9 +9,8 @@
   <body>
   
     <div class="box">
-      <span href="javascript:void(0)" class="openbtn" onclick="openNav()">&#9776;</span>
       <div class="search-box">
-          <span class="icon"><i class="fa fa-search"></i></span>
+          <span href="javascript:void(0)" class="openbtn" onclick="openNav()">&#9776;</span>
           <input type="search" id="search" placeholder="Search..." />
       </div>
     </div>
@@ -39,11 +38,15 @@
 
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#">Lager</a>
-    <a href="#">Uppgifter</a>
-    <a href="#">Support</a>
-    <a href="#">Inställningar</a>
-    <a href="#">Logga ut</a>
+    <ul>
+      <li class="first"><a href="#">Lager</a></li>
+      <li><a href="#">Uppgifter</a></li>
+      <li class="third"><a href="#">Uppgifter</a></li>
+      <li><a href="#">LINK</a></li>
+      <li class="last"><a href="#">Logga ut</a></li>
+    </ul>
+<!--  .menu ul li:first-child a {}
+.menu ul li:last-child a {} -->
   </div>
 
   
