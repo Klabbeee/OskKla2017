@@ -15,7 +15,7 @@ function closeNav() {
       })
     ],
     view: new ol.View({
-      center: ol.proj.fromLonLat([37.41, 8.82]),
+      center: ol.proj.fromLonLat([18.063240, 59.334591]),
       zoom: 10
     })
   });
