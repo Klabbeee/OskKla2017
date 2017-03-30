@@ -12,6 +12,30 @@ html, body, .map {
 }
 
 
+/*** Icon style ***/
+.header img {
+  height: 150px;
+  top: 0;
+  position: absolute;
+  padding: 60px;
+}
+
+.header i {
+  font-size: 18vh;
+  color: black;
+  position: absolute;
+  padding: 2vh 0vh 0vh 2vh;
+}
+.footer img,i {
+  vertical-align: middle;
+}
+
+/*** Icon style action buttons ***/
+.mfb-component__list i {
+  font-size: 4vh;
+  color: red;
+}
+
 
 /*** Search box ***/
 .search-box{
@@ -49,6 +73,7 @@ html, body, .map {
 .header {
   height: 25%;
   background-color: #5050e2;
+  position: relative;
 }
 
 .sidenav {
@@ -66,21 +91,45 @@ html, body, .map {
 }
 
 .sidenav a {
-  padding: 25px 8px 25px 80px;
+  padding: 10px 30px;
   text-decoration: none;
   font-size: 35px;
-  color: #818181;
-  display: block;
+  color: #000;
+  display: inline-block;
   transition: 0.3s
+  vertical-align: middle;
 }
 
-ul {
+.sidenav .header ul li.head a {
+  padding: none;
+  font-size: 22px;
+  color: #000;
+  display: block;
+  padding: 5px 8px 5px 60px;
+  
+}
+
+.sidenav .header ul{
+  bottom: 0;
+  position: absolute;
+  padding: 0px 0px 15px 0px;
+}
+
+ul{
   list-style-type: none;
   padding: 0;
-
+  margin: 0;
 }
 
-.sidenav li:hover, .offcanvas li:focus{
+hr {
+  margin:15px 0px;
+}
+
+.sidenav .footer ul{
+  padding: 20px 0px 0px 0px;
+}
+
+.sidenav .footer li:hover, .offcanvas li:focus{
   background-color: #f1f1f1;
 }
 
@@ -102,3 +151,5 @@ ul {
   padding: 17px 28px;
   margin: 2.5%
 }
+
+
