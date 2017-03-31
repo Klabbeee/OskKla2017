@@ -13,29 +13,35 @@ html, body, .map {
 
 
 /*** Icon style ***/
-.header img {
-  height: 150px;
-  top: 0;
-  position: absolute;
-  padding: 60px;
-}
-
 .header i {
   font-size: 18vh;
   color: black;
   position: absolute;
   padding: 2vh 0vh 0vh 2vh;
 }
-.footer img,i {
+.footer i {
   vertical-align: middle;
+  font-size: 5vh;
+  width: 5vh;
+  margin: 0 0 0 2vh;
+  color: #000
 }
+
+.footer ul li:last-child i {
+  transform: rotate(180deg);
+} 
 
 /*** Icon style action buttons ***/
 .mfb-component__list i {
-  font-size: 4vh;
-  color: red;
+  font-size: 3vh;
+  vertical-align: middle;
+  padding: 2vh;  /*** font-size + padding  = 7 vh ***/
 }
 
+.mfb-component__list img {
+  vertical-align: middle;
+  padding: 0;
+}
 
 /*** Search box ***/
 .search-box{
@@ -68,6 +74,16 @@ html, body, .map {
 }
 
 
+
+
+
+
+
+
+
+
+
+
 /*** Sidebar ***/
 
 .header {
@@ -91,12 +107,12 @@ html, body, .map {
 }
 
 .sidenav a {
-  padding: 10px 30px;
+  padding: 10px 180px 10px 30px;
   text-decoration: none;
   font-size: 35px;
   color: #000;
   display: inline-block;
-  transition: 0.3s
+  transition: 0.3s;
   vertical-align: middle;
 }
 
@@ -115,6 +131,14 @@ html, body, .map {
   padding: 0px 0px 15px 0px;
 }
 
+.arrow_drop_down i {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 3vh;
+  padding:10px;
+}
+
 ul{
   list-style-type: none;
   padding: 0;
@@ -125,21 +149,41 @@ hr {
   margin:15px 0px;
 }
 
-.sidenav .footer ul{
-  padding: 20px 0px 0px 0px;
+.sidenav .footer ul, .footer li{
+  padding: 1vh 0;
 }
-
+/*
 .sidenav .footer li:hover, .offcanvas li:focus{
   background-color: #f1f1f1;
+}
+*/
+
+.dropdown-menu a {
+  padding: 0px 30px 0px 180px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #000;
+  display: inline-block;
+  transition: 0.3s;
+  vertical-align: middle;
+}
+
+.dropdown-menu{
+  display: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: inline-block;
 }
 
 
 .sidenav .closebtn {
   position: absolute;
-  top: 10px;
+  top: 15px;
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
+  padding: 0;
 }
 
 

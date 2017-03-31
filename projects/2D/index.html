@@ -26,42 +26,37 @@
   <ul class="mfb-component--br mfb-slidein" data-mfb-toggle="click" data-mfb-state="closed">
   	<li class="mfb-component__wrap">
       <!-- the main menu button -->
-      <a data-mfb-label="Meny" class="mfb-component__button--main">
+      <a class="mfb-component__button--main">
         <!-- the main button icon visibile by default -->
-        <i class="mfb-component__main-icon--resting ion-nuclear"></i>
+        <i class="mfb-component__main-icon--active ion-plus-round"></i>
         <!-- the main button icon visibile when the user is hovering/interacting with the menu -->
-        <i class="mfb-component__main-icon--active ion-plus"></i>
+        <i class="mfb-component__main-icon--active ion-close-round"></i>
       </a>
       <ul class="mfb-component__list">
         <!-- a child button, repeat as many times as needed -->
         <li>
           <a href="" class="mfb-component__button--child">
-            <i class="material-icons">cloud</i>
+            <i class="material-icons">map</i>
           </a>
         </li>
         <li>
           <a href="" class="mfb-component__button--child">
-            <i class="mfb-component__child-icon ion-ios-information"></i>
+            <img src="../resources/images/3d-view.svg">
           </a>
         </li>
         <li>
           <a href="" class="mfb-component__button--child">
-            <i class="mfb-component__child-icon ion-ios-information"></i>
+            <img src="../resources/images/combined-view.svg">
           </a>
         </li>
         <li>
           <a href="" class="mfb-component__button--child">
-            <i class="mfb-component__child-icon ion-ios-information"></i>
+            <i class="material-icons">my_location</i>
           </a>
         </li>
         <li>
           <a href="" class="mfb-component__button--child">
-            <i class="mfb-component__child-icon ion-ios-information"></i>
-          </a>
-        </li>
-        <li>
-          <a href="" class="mfb-component__button--child">
-            <i class="mfb-component__child-icon ion-ios-information"></i>
+            <img src="../resources/images/zoom-to-layer.svg">
           </a>
         </li>
       </ul>
@@ -74,26 +69,44 @@
     <div id ="header" class="header">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <i class="material-icons">account_circle</i>
-    <ul>
+    <ul class="head">
       <li class="head"><a href="#">Roger Andersson</a></li>
-      <li class="head"><a href="#">Name på uppdrag 2</a></li>
+      <li class="head"><a href="#">Namn på uppdrag 2</a></li>
     </ul>
+    <a href="javascript:void(0)" class="arrow_drop_down" onclick=""><i class="material-icons">arrow_drop_down</i></a>
     </div>
     <div id ="footer" class="footer">
       <ul>
-        <li><img src="../resources/images/Layer-button.png"/><a href="#">Lager</a></li>
-        <li><img src="../resources/images/Layer-button.png"/><a href="#">Uppgifter</a></li><hr>
-        <li><img src="../resources/images/Layer-button.png"/><a href="#">Support</a></li>
-        <li><img src="../resources/images/Layer-button.png"/><a href="#">Inställningar</a></li>
-        <li><img src="../resources/images/Layer-button.png"/><a href="#">Logga ut</a></li>
+        <li class="dropdown">
+          <i class="material-icons">layers</i>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lager</a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Lager 1</a></li>
+            <li><a href="#">Lager 2</a></li>
+            <li><a href="#">Lager 3</a></li>
+            <li><a href="#">Lager 4</a></li>
+          </ul>
+        </li>
+        <li>
+          <i class="material-icons">assignments</i>
+          <a href="#">Uppgifter</a>
+        </li>
+        <hr>
+        <li>
+          <i class="material-icons">help</i>
+          <a href="#">Support</a>
+        </li>
+        <li>
+          <i class="material-icons">settings</i>
+          <a href="#">Inställningar</a>
+        </li>
+        <li>
+          <i class="material-icons">exit_to_app</i>
+          <a href="#">Logga ut</a>
+        </li>
       </ul>
     </div>
   </div>
-
-<!--  .menu ul li:first-child a {}
-.menu ul li:last-child a {} 
-.menu ul li.first a {}
--->
   
 
   <!-- Map div -->
