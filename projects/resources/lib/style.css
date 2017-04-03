@@ -11,6 +11,26 @@ html, body, .map {
   height: 100%;
 }
 
+.scale-line {
+  position: absolute;
+  left: 2vh;
+  bottom: 2vh;
+  z-index: 2
+
+}
+
+.ol-scale-line {
+  position: relative;
+  color: black;
+  border-bottom: solid;
+  border-right: solid;
+  border-left: solid;
+  font-size:1.5em;
+}
+
+.ol-scale-line-inner{
+  height: 2em;
+}
 
 /*** Icon style ***/
 .header i {
@@ -96,7 +116,7 @@ html, body, .map {
   height: 110%;
   width: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   top: -10px;
   left: -10px;
   background-color: #fff;

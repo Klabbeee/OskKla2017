@@ -1,52 +1,111 @@
+<!DOCTYPE html>
 <html>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
   <head>
-    <title>Geo</title>
+    <script src="https://openlayers.org/en/v4.0.1/build/ol.js" type="text/javascript"></script>
+    <link href="../resources/lib/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../resources/lib/style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="../node_modules/mfb/src/mfb.css" rel="stylesheet"/>
+    <link href="../resources/lib/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
     <script src="../resources/lib/three/three.min.js"></script>
     <script src="../resources/lib/argon.min.js"></script>
-    <link src="../resources/lib/bootstrap-3.3.7/css/bootstrap.min.css"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-<div id="wrapper">
-  <div class="overlay"></div>
 
-  <!-- Sidebar -->
-  <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
-    <ul class="nav sidebar-nav">
-      <li class="sidebar-brand">
-        <a href="#"> Bootstrap 3 Wa</a>
-      </li>
-      <li>
-        <a href="#"></i> Home</a>
-      </li>
-      <li>
-        <a href="#"></i> Page one</a>
-      </li>
-      <li>
+
+    <!-- Searchbox and menu button -->
+          <span href="javascript:void(0)" class="openbtn" onclick="openNav()">&#9776;</span>
+
+
+
+
+
+  <!-- Action buttons -->
+  <ul class="mfb-component--br mfb-slidein" data-mfb-toggle="click" data-mfb-state="close">
+  	<li class="mfb-component__wrap">
+      <!-- the main menu button -->
+      <a class="mfb-component__button--main">
+        <!-- the main button icon visibile by default -->
+        <i class="mfb-component__main-icon--resting ion-plus-round"></i>
+        <!-- the main button icon visibile when the user is hovering/interacting with the menu -->
+        <i class="mfb-component__main-icon--active ion-close-round"></i>
+      </a>
+      <ul class="mfb-component__list">
+        <!-- a child button, repeat as many times as needed -->
+        <li>
+          <a href="../2D/index.html" class="mfb-component__button--child">
+            <i class="material-icons">map</i>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="mfb-component__button--child">
+            <img src="../resources/images/3d-view.svg">
+          </a>
+        </li>
+        <li>
+          <a href="" class="mfb-component__button--child">
+            <img src="../resources/images/combined-view.svg">
+          </a>
+        </li>
+      </ul>
+  	</li>
+  </ul>
+
+
+  <!-- sidebar menu, close button and content -->
+  <div id="mySidenav" class="sidenav">
+    <div id ="header" class="header">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <i class="material-icons">account_circle</i>
+    <ul class="head">
+      <li class="head"><a href="#">Roger Andersson</a></li>
+      <li class="head"><a href="#">Namn på uppdrag 2</a></li>
     </ul>
-  </nav>
-  <!-- /#sidebar-wrapper -->
-
-  <!-- Page Content -->
-  <div id="page-content-wrapper">
-    <button type="button" class="hamburger is-closed animated fadeInLeft" data-toggle="offcanvas">
-            <span class="hamb-top"></span>
-            <span class="hamb-middle"></span>
-            <span class="hamb-bottom"></span>
-          </button>
+    <a href="javascript:void(0)" class="arrow_drop_down" onclick=""><i class="material-icons">arrow_drop_down</i></a>
+    </div>
+    <div id ="footer" class="footer">
+      <ul>
+        <li class="dropdown">
+          <i class="material-icons">layers</i>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lager</a>
+          <ul class="dropdown-menu-layer" role="menu">
+            <li><a href="#">Lager 1</a></li>
+            <li><a href="#">Lager 2</a></li>
+            <li><a href="#">Lager 3</a></li>
+            <li><a href="#">Lager 4</a></li>
+          </ul>
+        </li>
+        <li>
+          <i class="material-icons">assignments</i>
+          <a href="#">Uppgifter</a>
+        </li>
+        <hr>
+        <li>
+          <i class="material-icons">help</i>
+          <a href="#">Support</a>
+        </li>
+        <li>
+          <i class="material-icons">settings</i>
+          <a href="#">Inställningar</a>
+        </li>
+        <li>
+          <i class="material-icons">exit_to_app</i>
+          <a href="#">Logga ut</a>
+        </li>
+      </ul>
+    </div>
   </div>
-  <!-- /#page-content-wrapper -->
-<!-- /#wrapper -->
 
+  <div id="info" style="display: none;"></div> 
+
+  
+
+  <!-- Map div -->
+  <div id="map" class="map"></div>
 
   </body>
-	<script>
-		function hideMe(elem) {
-		    elem.style.display = 'none';
-		}	
-  </script> 
   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
   <script src="../resources/lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
   <script src="./app.js"></script>
+  <script src="../node_modules/mfb/src/mfb.js"></script>
 </html>

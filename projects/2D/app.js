@@ -11,8 +11,8 @@ var view = new ol.View({
   zoom: 14
   });
 
-var scaleLineControl = new ol.control.ScaleLine({
-target: document.getElementById('scaleline')
+var scaleLineControl = new ol.control.ScaleLine({className: 'ol-scale-line', 
+target: document.getElementById('scale-line')
 });
 
   var map = new ol.Map({
