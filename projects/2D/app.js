@@ -11,8 +11,18 @@ var view = new ol.View({
   zoom: 10
   });
 
+var scaleLineControl = new ol.control.ScaleLine({
+target: document.getElementById('scaleline')
+});
 
   var map = new ol.Map({
+    controls: ol.control.defaults({
+      attributionOptions: /** @type {olx.control.AttributionOptions} */ ({
+        collapsible: false
+      })
+    }).extend([
+      scaleLineControl
+    ]),
     target: 'map',
     layers: [
       new ol.layer.Tile({
@@ -22,6 +32,7 @@ var view = new ol.View({
     view: view
   });
 
+scaleLineControl.setUnits('metric');
 
 
 var geolocation = new ol.Geolocation({
