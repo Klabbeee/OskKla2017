@@ -158,7 +158,9 @@ hr {
 }
 */
 
-.dropdown-menu a {
+
+/*** Dropdown menu lager ***/
+.dropdown-menu-layer a {
   padding: 0px 30px 0px 180px;
   text-decoration: none;
   font-size: 20px;
@@ -168,15 +170,17 @@ hr {
   vertical-align: middle;
 }
 
-.dropdown-menu{
+.dropdown-menu-layer{
   display: none;
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown:hover .dropdown-menu-layer {
     display: inline-block;
 }
 
 
+
+/*** Close button ***/
 .sidenav .closebtn {
   position: absolute;
   top: 15px;

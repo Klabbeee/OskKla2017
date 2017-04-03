@@ -8,7 +8,7 @@ function closeNav() {
 
 var view = new ol.View({
   center: ol.proj.fromLonLat([18.063240, 59.334591]),
-  zoom: 10
+  zoom: 14
   });
 
 var scaleLineControl = new ol.control.ScaleLine({
