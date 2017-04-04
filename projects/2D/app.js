@@ -9,8 +9,7 @@ function closeNav() {
 function openBotInfo() {
     document.getElementById("bottominfo").style.height = "10vh";
     document.getElementById("mfb-component__wrap").style.paddingBottom = "11vh";
-    document.getElementById("scale-line").style.bottom = "11vh";
-
+    document.getElementById("scale-line").style.bottom = "11vh"; 
 }
 
 function closeAll() {
@@ -18,7 +17,31 @@ function closeAll() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("mfb-component__wrap").style.paddingBottom = "4vh";
     document.getElementById("scale-line").style.bottom = "4vh";
+    document.getElementById("bottomlabel").innerHTML = ""; 
 }
+
+function openAssign() {
+    document.getElementById("assignments").style.display = "block";
+    document.getElementById("plain-menu").style.display = "none";
+    document.getElementById("arrow_drop_up").style.display = "block";
+    document.getElementById("arrow_drop_down").style.display = "none";
+}
+
+function closeAssign() {
+    document.getElementById("assignments").style.display = "none";
+    document.getElementById("plain-menu").style.display = "block";
+    document.getElementById("arrow_drop_up").style.display = "none";
+    document.getElementById("arrow_drop_down").style.display = "block";
+}
+
+
+
+
+
+
+/*** Map ***/
+
+
 
 var view = new ol.View({
   center: ol.proj.fromLonLat([18.063240, 59.334591]),
@@ -95,6 +118,7 @@ positionFeature.setStyle(new ol.style.Style({
   })
 }));
 
+
 geolocation.on('change:position', function() {
   var coordinates = geolocation.getPosition();
   positionFeature.setGeometry(coordinates ?
@@ -110,6 +134,8 @@ new ol.layer.Vector({
 
 function myLocation() {
   map.getView().setCenter(geolocation.getPosition());
+  var coordinates = geolocation.getPosition();
+  document.getElementById("bottomlabel").innerHTML = coordinates;
   view.setZoom(14);
 };
 

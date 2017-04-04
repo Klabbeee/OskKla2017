@@ -71,12 +71,28 @@
     <i class="material-icons">account_circle</i>
     <ul class="head">
       <li class="head"><a href="#">Roger Andersson</a></li>
-      <li class="head"><a href="#">Namn på uppdrag 2</a></li>
+      <li class="head"><a href="#">Uppdrag 2</a></li>
     </ul>
-    <a href="javascript:void(0)" class="arrow_drop_down" onclick=""><i class="material-icons">arrow_drop_down</i></a>
+    <a href="javascript:void(0)"  class="arrow_drop_down" onclick="openAssign()"><i id="arrow_drop_down" class="material-icons">arrow_drop_down</i></a>
+    <a href="javascript:void(0)"  class="arrow_drop_up" onclick="closeAssign()"><i id="arrow_drop_up" class="material-icons">arrow_drop_up</i></a>
     </div>
-    <div id ="footer" class="footer">
-      <ul>
+    <div id="footer" class="footer">
+      <ul id="assignments" class="assignments">
+        <li onclick="closeAssign()">
+          <i class="material-icons">assignments</i>
+          <a href="#">Uppdrag 1</a>
+        </li>
+        <li onclick="closeAssign()">
+          <i class="material-icons">assignments</i>
+          <a href="#">Uppdrag 3</a>
+        </li>
+        <li onclick="closeAssign()">
+          <i class="material-icons">assignments</i>
+          <a href="#">Uppdrag 4</a>
+        </li>
+        
+      </ul>
+      <ul id="plain-menu" class="plain-menu">
         <li class="dropdown">
           <i class="material-icons">layers</i>
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lager</a>
@@ -108,6 +124,9 @@
     </div>
   </div>
 
+
+
+
   <div id="info" style="display: none;"></div> 
 <!--   <p>
     position accuracy : <code id="accuracy"></code>&nbsp;&nbsp;
@@ -117,21 +136,23 @@
     speed : <code id="speed"></code>
   </p> -->
   
+
+
+
   <div href="javascript:void(0)" id=bottominfo class="bottominfo" onclick="openBotInfo()">
-    
+      <label id="bottomlabel" class="bottomlabel"></label>
+      <div id=infobox class="infobox">
+        
+
+      </div>
   </div>
 
 
 
 
-
-
   <!-- Map div -->
-    <div href="javascript:void(0)" id="map" class="map" onclick="closeAll()">
-
-
-    </div>
-    <div id="scale-line" class="scale-line"></div>
+  <div href="javascript:void(0)" id="map" class="map" onclick="closeAll()"></div>
+  <div id="scale-line" class="scale-line"></div>
 
 
 
