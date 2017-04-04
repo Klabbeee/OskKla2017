@@ -93,3 +93,12 @@ new ol.layer.Vector({
     features: [accuracyFeature, positionFeature]
   })
 });
+
+function myLocation() {
+  map.getView().setCenter(geolocation.getPosition());
+  view.setZoom(14);
+};
+
+geolocation.on('change', function myLocation() {
+  map.getView().setCenter(geolocation.getPosition());
+});
