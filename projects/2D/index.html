@@ -21,7 +21,7 @@
 
   <!-- Action buttons -->
   <ul class="mfb-component--br mfb-slidein" data-mfb-toggle="click" data-mfb-state="close">
-  	<li class="mfb-component__wrap">
+  	<li id="mfb-component__wrap" class="mfb-component__wrap">
       <!-- the main menu button -->
       <a class="mfb-component__button--main">
         <!-- the main button icon visibile by default -->
@@ -59,6 +59,9 @@
       </ul>
   	</li>
   </ul>
+
+
+
 
 
   <!-- sidebar menu, close button and content -->
@@ -114,10 +117,22 @@
     speed : <code id="speed"></code>
   </p> -->
   
+  <div href="javascript:void(0)" id=bottominfo class="bottominfo" onclick="openBotInfo()">
+    
+  </div>
+
+
+
+
+
 
   <!-- Map div -->
-    <div id="map" class="map"></div>
+    <div href="javascript:void(0)" id="map" class="map" onclick="closeAll()">
+
+
+    </div>
     <div id="scale-line" class="scale-line"></div>
+
 
 
   </body>

@@ -6,6 +6,20 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 
+function openBotInfo() {
+    document.getElementById("bottominfo").style.height = "10vh";
+    document.getElementById("mfb-component__wrap").style.paddingBottom = "11vh";
+    document.getElementById("scale-line").style.bottom = "11vh";
+
+}
+
+function closeAll() {
+    document.getElementById("bottominfo").style.height = "3vh";
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("mfb-component__wrap").style.paddingBottom = "4vh";
+    document.getElementById("scale-line").style.bottom = "4vh";
+}
+
 var view = new ol.View({
   center: ol.proj.fromLonLat([18.063240, 59.334591]),
   zoom: 14
