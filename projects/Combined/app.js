@@ -34,19 +34,80 @@ function closeAssign() {
     document.getElementById("arrow_drop_down").style.display = "block";
 }
 
+function combinedView() {
+  //document.getElementById("map").style.height = "50vh";
+}
 
-/*** Map ***/
+
+
+/*** Slider ***/
+
+var isResizing = false,
+    lastDownY = 0;
+
+$(function () {
+    var container = $('.container'),
+        top = $('.map3d'),
+        bottom = $('.map2'),
+        handle = $('.drag');
+
+    //handle.on('mousedown', function (e) {
+    handle.on('touchstart', function (e) {
+        isResizing = true;
+        lastDownY = e.clientY;
+        console.log("Hello1")
+    });
+
+    //$(document).on('mousemove', function (e) {
+    $(document).on('touchmove', function (e) {
+        // we don't want to do anything if we aren't resizing.
+        if (!isResizing) 
+            return;
+        
+        var offsetMiddle = container.height() - (e.clientY - container.offset().top);
+
+        top.css('bottom', offsetMiddle);
+        bottom.css('height', offsetMiddle);
+        map2.updateSize();
+        map3d.updateSize();
+        console.log("Hello2")
+    //}).on('mouseup', function (e) {
+    }).on('touchend', function (e) {
+      
+      // stop resizing
+      isResizing = false;
+      console.log("Hello3")
+    });
+});
+
+
+
+
 
 var view = new ol.View({
   center: ol.proj.fromLonLat([18.063240, 59.334591]),
-  zoom: 14
+  zoom: 16
   });
+
 
 var scaleLineControl = new ol.control.ScaleLine({className: 'ol-scale-line', 
 target: document.getElementById('scale-line')
 });
 
-  var map = new ol.Map({
+
+
+//////***   COMBINED VIEW, id map2    ***///////////////
+
+
+
+  /*** 3dmap placeholder *///
+
+  var view2 = new ol.View({
+  center: ol.proj.fromLonLat([18.063240, 59.334591]),
+  zoom: 6
+  });
+
+  var map3d = new ol.Map({
     controls: ol.control.defaults({
       attributionOptions: /** @type {olx.control.AttributionOptions} */ ({
         collapsible: false
@@ -54,7 +115,27 @@ target: document.getElementById('scale-line')
     }).extend([
       scaleLineControl
     ]),
-    target: 'map',
+    target: 'map3d',
+    layers: [
+      new ol.layer.Tile({
+        source: new ol.source.OSM()
+      })
+    ],
+    view: view2
+  });
+
+  /*** End of placeholder ***/
+
+
+  var map2 = new ol.Map({
+    controls: ol.control.defaults({
+      attributionOptions: /** @type {olx.control.AttributionOptions} */ ({
+        collapsible: false
+      })
+    }).extend([
+      scaleLineControl
+    ]),
+    target: 'map2',
     layers: [
       new ol.layer.Tile({
         source: new ol.source.OSM()
@@ -70,23 +151,10 @@ var geolocation = new ol.Geolocation({
   projection: view.getProjection()
 });
 
-// function el(id) {
-//   return document.getElementById(id);
-// }
 
 geolocation.setTracking(true);
 
 
-// update the HTML page when the position changes.
-// geolocation.on('change', function() {
-//   el('accuracy').innerText = geolocation.getAccuracy() + ' [m]';
-//   el('altitude').innerText = geolocation.getAltitude() + ' [m]';
-//   el('altitudeAccuracy').innerText = geolocation.getAltitudeAccuracy() + ' [m]';
-//   el('heading').innerText = geolocation.getHeading() + ' [rad]';
-//   el('speed').innerText = geolocation.getSpeed() + ' [m/s]';
-// });
-
-// handle geolocation error.
 geolocation.on('error', function(error) {
   var info = document.getElementById('info');
   info.innerHTML = error.message;
@@ -120,19 +188,21 @@ geolocation.on('change:position', function() {
 });
 
 new ol.layer.Vector({
-  map: map,
+  map: map2,
   source: new ol.source.Vector({
     features: [accuracyFeature, positionFeature]
   })
 });
 
 function myLocation() {
-  map.getView().setCenter(geolocation.getPosition());
+  map2.getView().setCenter(geolocation.getPosition());
   var coordinates = geolocation.getPosition();
   document.getElementById("bottomlabel").innerHTML = coordinates;
-  view.setZoom(14);
+  view.setZoom(16);
 };
 
 geolocation.on('change', function myLocation() {
-  map.getView().setCenter(geolocation.getPosition());
+  map2.getView().setCenter(geolocation.getPosition());
 });
+
+//////***  end of COMBINED VIEW, id map2    ***///////////////

@@ -43,7 +43,7 @@
           </a>
         </li>
         <li>
-          <a href="../Combined/index.html" class="mfb-component__button--child"">
+          <a href="#" class="mfb-component__button--child" onClick="combinedView();">
             <img src="../resources/images/combined-view.svg">
           </a>
         </li>
@@ -152,13 +152,16 @@
 
 
   <!-- Map div -->
-  <div href="javascript:void(0)" id="map" class="map" onclick="closeAll()"></div>
+  <div id="container" class="container">
+  <div href="javascript:void(0)" id="map3d" class="map3d" onclick="closeAll()"></div> 
+  <div href="javascript:void(0)" id="map2" class="map2" onclick="closeAll()">
+      <div id="drag" class="drag"></div>
+  </div>
   <div id="scale-line" class="scale-line"></div>
-
-
+  </div>
 
   </body>
-  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
   <script src="../resources/lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
   <script src="./app.js"></script>
   <script src="../node_modules/mfb/src/mfb.js"></script>
