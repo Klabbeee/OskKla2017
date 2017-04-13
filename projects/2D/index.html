@@ -7,9 +7,13 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="../node_modules/mfb/src/mfb.css" rel="stylesheet"/>
     <link href="../resources/lib/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.14/proj4-src.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bluebird/latest/bluebird.js"></script>
+    <script src="./app.js"></script>
   </head>
   <body>
+
 
     <!-- Searchbox and menu button -->
     <div class="box">
@@ -43,7 +47,7 @@
           </a>
         </li>
         <li>
-          <a href="../Combined/index.html" class="mfb-component__button--child"">
+          <a href="../Combined/index.html" class="mfb-component__button--child">
             <img src="../resources/images/combined-view.svg">
           </a>
         </li>
@@ -53,7 +57,7 @@
           </a>
         </li>
         <li>
-          <a href="#" class="mfb-component__button--child">
+          <a href="#" class="mfb-component__button--child" onClick="">
             <img src="../resources/images/zoom-to-layer.svg">
           </a>
         </li>
@@ -98,8 +102,8 @@
           <i class="material-icons">layers</i>
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lager</a>
           <ul class="dropdown-menu-layer" role="menu">
-            <li><a href="#">Lager 1</a></li>
-            <li><a href="#">Lager 2</a></li>
+            <li><a href="#" onClick="nodeOnClick();">Lager 1</a></li>
+            <li><a href="#" onClick="arcOnClick();">Lager 2</a></li>
             <li><a href="#">Lager 3</a></li>
             <li><a href="#">Lager 4</a></li>
           </ul>
@@ -155,11 +159,16 @@
   <div href="javascript:void(0)" id="map" class="map" onclick="closeAll()"></div>
   <div id="scale-line" class="scale-line"></div>
 
+<script>
 
+
+  init();
+
+</script>
 
   </body>
   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-  <script src="../resources/lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
   <script src="./app.js"></script>
+  <script src="../resources/lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
   <script src="../node_modules/mfb/src/mfb.js"></script>
 </html>
