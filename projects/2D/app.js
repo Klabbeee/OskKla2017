@@ -50,6 +50,12 @@ var scaleLineControl = new ol.control.ScaleLine({className: 'ol-scale-line',
 target: document.getElementById('scale-line')
 });
 
+  var stamenLayer = new ol.layer.Tile({
+    source: new ol.source.Stamen({
+      layer: 'terrain'
+    })
+  });
+
   var map = new ol.Map({
     controls: ol.control.defaults({
       attributionOptions: /** @type {olx.control.AttributionOptions} */ ({
@@ -59,13 +65,14 @@ target: document.getElementById('scale-line')
       scaleLineControl
     ]),
     target: 'map',
-    layers: [
-      new ol.layer.Tile({
-        source: new ol.source.OSM()
-      })
-    ],
+    layers: [stamenLayer],
     view: view
   });
+      // Old map
+      // new ol.layer.Tile({
+      //   source: new ol.source.OSM()
+      // })
+    
 
 scaleLineControl.setUnits('metric');
 
