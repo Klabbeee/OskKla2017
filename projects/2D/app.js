@@ -34,32 +34,7 @@ function closeAssign() {
     document.getElementById("arrow_drop_down").style.display = "block";
 }
 
-function nodeOnClick()  {
-    console.log("woop")
-    if (waterLayers.nodeLayer.getVisible() == false){ 
-      waterLayers.nodeLayer.setVisible(true);
-     }
-     else{
-      waterLayers.nodeLayer.setVisible(false);
-     }
-}
 
-function arcOnClick()  {
-  console.log("woop")
-  if (waterLayers.arcLayer.getVisible() == false){
-  waterLayers.arcLayer.setVisible(true);
-  }else{
-  waterLayers.arcLayer.setVisible(false);
-  }
-};
-
-
-function formShow() {
-  var form = document.getElementsByTagName("form")[0];
-  var div = document.createElement("div");
-  div.innerHTML = "YO, im a form";
-  form.appendChild(div);
-}
 
 /*** Map ***/
 
@@ -469,3 +444,25 @@ function layerMaker(arcSource, nodeSource){
     }
     
   };
+
+function nodeOnClick()  {
+    console.log("woop")
+    if (waterLayers.nodeLayer.getVisible() == false){ 
+      waterLayers.nodeLayer.setVisible(true);
+     }
+     else{
+      waterLayers.nodeLayer.setVisible(false);
+     }
+}
+
+function arcOnClick()  {
+  console.log("woop")
+  if (waterLayers.arcLayer.getVisible() == false){
+  waterLayers.arcLayer.setVisible(true);
+  }else{
+  waterLayers.arcLayer.setVisible(false);
+  }
+};
+
+
+init();
