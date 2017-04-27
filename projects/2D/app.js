@@ -34,6 +34,32 @@ function closeAssign() {
     document.getElementById("arrow_drop_down").style.display = "block";
 }
 
+function nodeOnClick()  {
+    console.log("woop")
+    if (waterLayers.nodeLayer.getVisible() == false){ 
+      waterLayers.nodeLayer.setVisible(true);
+     }
+     else{
+      waterLayers.nodeLayer.setVisible(false);
+     }
+}
+
+function arcOnClick()  {
+  console.log("woop")
+  if (waterLayers.arcLayer.getVisible() == false){
+  waterLayers.arcLayer.setVisible(true);
+  }else{
+  waterLayers.arcLayer.setVisible(false);
+  }
+};
+
+
+function formShow() {
+  var form = document.getElementsByTagName("form")[0];
+  var div = document.createElement("div");
+  div.innerHTML = "YO, im a form";
+  form.appendChild(div);
+}
 
 /*** Map ***/
 
@@ -220,6 +246,7 @@ Promise
     waterLayers.nodeLayer.setVisible(false);
     map.addLayer(waterLayers.arcLayer);
     waterLayers.arcLayer.setVisible(false);
+    console.log("woop")
       //Stores the raw data
     //To access the water layer: waterLayers.waterLayer
     //So put your map-stuff here somewhere
@@ -442,19 +469,3 @@ function layerMaker(arcSource, nodeSource){
     }
     
   };
-
-  function nodeOnClick()  {
-      if (waterLayers.nodeLayer.getVisible() == false){
-      waterLayers.nodeLayer.setVisible(true);
-     }else{
-      waterLayers.nodeLayer.setVisible(false);
-     }
-  };
-
-  function arcOnClick()  {
-    if (waterLayers.arcLayer.getVisible() == false){
-    waterLayers.arcLayer.setVisible(true);
-    }else{
-    waterLayers.arcLayer.setVisible(false);
-    }
-};
