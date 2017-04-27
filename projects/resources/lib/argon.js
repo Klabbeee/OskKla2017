@@ -6669,7 +6669,7 @@ $__System.register('17', ['c', 'a', '10', 'b', '12', '14', '11'], function (expo
                 style.type = 'text/css';
                 document.head.insertBefore(style, document.head.firstChild);
                 var sheet = style.sheet;
-                sheet.insertRule("\n        #argon {\n            position: fixed;\n            left: 0px;\n            bottom: 0px;\n            width: 100%;\n            height: 100%;\n            margin: 0;\n            border: 0;\n            padding: 0;\n        }\n    ", 0);
+                sheet.insertRule("\n        #argon {\n            position: fixed;\n            left: 0px;\n            bottom: 0px;\n            width: 100%;\n            height: 100%;\n            margin: 0;\n            border: 0;\n            padding: 0;\n            z-index: -1;\n        }\n    ", 0);
                 sheet.insertRule("\n        .argon-view > * {\n            position: absolute;\n            pointer-events: none;\n        }\n    ", 1);
             }
             /**

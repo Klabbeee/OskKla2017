@@ -51,15 +51,15 @@ $(function () {
         bottom = $('.map2'),
         handle = $('.drag');
 
-    //handle.on('mousedown', function (e) {
-    handle.on('touchstart', function (e) {
+    handle.on('mousedown', function (e) {
+    //handle.on('touchstart', function (e) {
         isResizing = true;
         lastDownY = e.clientY;
         console.log("Hello1")
     });
 
-    //$(document).on('mousemove', function (e) {
-    $(document).on('touchmove', function (e) {
+    $(document).on('mousemove', function (e) {
+    //$(document).on('touchmove', function (e) {
         // we don't want to do anything if we aren't resizing.
         if (!isResizing) 
             return;
@@ -71,8 +71,8 @@ $(function () {
         map2.updateSize();
         map3d.updateSize();
         console.log("Hello2")
-    //}).on('mouseup', function (e) {
-    }).on('touchend', function (e) {
+    }).on('mouseup', function (e) {
+    //}).on('touchend', function (e) {
       
       // stop resizing
       isResizing = false;

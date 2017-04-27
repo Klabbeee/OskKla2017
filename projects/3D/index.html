@@ -2,27 +2,23 @@
 <html>
   <head>
     <script src="https://openlayers.org/en/v4.0.1/build/ol.js" type="text/javascript"></script>
-    <link href="../resources/lib/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../resources/lib/bootstrap-3.3.7/css/bootstrap.min.css"/>
     <link href="../resources/lib/style.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="../node_modules/mfb/src/mfb.css" rel="stylesheet"/>
     <link href="../resources/lib/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
-    <script src="../resources/lib/three/three.min.js"></script>
-    <script src="../resources/lib/argon.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   </head>
   <body>
 
 
-    <!-- Searchbox and menu button -->
-          <span href="javascript:void(0)" class="openbtn" onclick="openNav()">&#9776;</span>
-
-
+  <span href="javascript:void(0)" class="openbtn" onclick="openNav()">&#9776;</span>
 
 
 
   <!-- Action buttons -->
   <ul class="mfb-component--br mfb-slidein" data-mfb-toggle="click" data-mfb-state="close">
-  	<li class="mfb-component__wrap">
+    <li id="mfb-component__wrap" class="mfb-component__wrap">
       <!-- the main menu button -->
       <a class="mfb-component__button--main">
         <!-- the main button icon visibile by default -->
@@ -38,18 +34,21 @@
           </a>
         </li>
         <li>
-          <a href="#" class="mfb-component__button--child">
+          <a href="../3D/index.html" class="mfb-component__button--child">
             <img src="../resources/images/3d-view.svg">
           </a>
         </li>
         <li>
-          <a href="" class="mfb-component__button--child">
+          <a href="../Combined/index.html" class="mfb-component__button--child"">
             <img src="../resources/images/combined-view.svg">
           </a>
         </li>
       </ul>
-  	</li>
+    </li>
   </ul>
+
+
+
 
 
   <!-- sidebar menu, close button and content -->
@@ -59,12 +58,27 @@
     <i class="material-icons">account_circle</i>
     <ul class="head">
       <li class="head"><a href="#">Roger Andersson</a></li>
-      <li class="head"><a href="#">Namn på uppdrag 2</a></li>
+      <li class="head"><a href="#">Uppdrag 2</a></li>
     </ul>
-    <a href="javascript:void(0)" class="arrow_drop_down" onclick=""><i class="material-icons">arrow_drop_down</i></a>
+    <a href="javascript:void(0)"  class="arrow_drop_down" onclick="openAssign()"><i id="arrow_drop_down" class="material-icons">arrow_drop_down</i></a>
+    <a href="javascript:void(0)"  class="arrow_drop_up" onclick="closeAssign()"><i id="arrow_drop_up" class="material-icons">arrow_drop_up</i></a>
     </div>
-    <div id ="footer" class="footer">
-      <ul>
+    <div id="footer" class="footer">
+      <ul id="assignments" class="assignments">
+        <li onclick="closeAssign()">
+          <i class="material-icons">assignments</i>
+          <a href="#">Uppdrag 1</a>
+        </li>
+        <li onclick="closeAssign()">
+          <i class="material-icons">assignments</i>
+          <a href="#">Uppdrag 3</a>
+        </li>
+        <li onclick="closeAssign()">
+          <i class="material-icons">assignments</i>
+          <a href="#">Uppdrag 4</a>
+        </li>
+      </ul>
+      <ul id="plain-menu" class="plain-menu">
         <li class="dropdown">
           <i class="material-icons">layers</i>
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lager</a>
@@ -96,16 +110,40 @@
     </div>
   </div>
 
-  <div id="info" style="display: none;"></div> 
 
+
+
+ 
+<!-- 
+    Vad är det här? 
+  <div id="info" style="display: none;"></div>
+  <p>
+    position accuracy : <code id="accuracy"></code>&nbsp;&nbsp;
+    altitude : <code id="altitude"></code>&nbsp;&nbsp;
+    altitude accuracy : <code id="altitudeAccuracy"></code>&nbsp;&nbsp;
+    heading : <code id="heading"></code>&nbsp;&nbsp;
+    speed : <code id="speed"></code>
+  </p> -->
   
 
-  <!-- Map div -->
-  <div id="map" class="map"></div>
+
+
+
+  <div href="javascript:void(0)" id="bottominfo" class="bottominfo" onclick="openBotInfo()">
+      <label id="bottomlabel" class="bottomlabel"></label>
+      <div id="infobox" class="infobox">
+        
+
+      </div>
+  </div>
+
+
 
   </body>
+  <script src="../resources/lib/argon.js"></script>
+  <script src="../resources/lib/three/three.js"></script>
   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
   <script src="../resources/lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
-  <script src="./app.js"></script>
+  <script src="./app3d.js"></script>
   <script src="../node_modules/mfb/src/mfb.js"></script>
 </html>
