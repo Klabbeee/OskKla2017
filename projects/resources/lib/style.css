@@ -55,6 +55,26 @@ html, body {
   transition: 0.3s;
 }
 
+/***ol-compass *///
+
+.ol-compass {
+  font-weight: 200; 
+}
+
+.ol-control {
+  margin-top: 8vh;
+  margin-right: 2.5%;
+}
+
+.ol-touch .ol-control button{
+  font-size: 3vh;
+}
+
+.ol-control button{
+  font-size: 3em;
+}
+
+/*** scale line ***/
 .ol-scale-line {
   position: relative;
   color: black;
@@ -62,10 +82,25 @@ html, body {
   border-right: solid;
   border-left: solid;
   font-size:1.5em;
+  background: none;
+}
+
+.ol-zoom .ol-zoom-in{
+  display: none;
+}
+
+.ol-zoom .ol-zoom-out{
+  display: none;
 }
 
 .ol-scale-line-inner{
+  border: none;
+  border-top: none;
+  color: black;
+  font-size: 24px;
   text-align: center;
+  margin: none;
+  will-change: contents,width
 }
 
 .ol-viewport {

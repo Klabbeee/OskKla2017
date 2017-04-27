@@ -43,7 +43,8 @@ proj4.defs("EPSG:3006","+proj=utm +zone=33 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +
 var view = new ol.View({
   projection: ol.proj.get('EPSG:3006'),
   center: [670162.497556056, 6579305.28607494],
-  zoom: 14
+  zoom: 15,
+  rotation: Math.PI / 6
   });
 
 var scaleLineControl = new ol.control.ScaleLine({className: 'ol-scale-line', 
@@ -52,7 +53,7 @@ target: document.getElementById('scale-line')
 
   var stamenLayer = new ol.layer.Tile({
     source: new ol.source.Stamen({
-      layer: 'terrain'
+      layer: 'terrain'  //http://maps.stamen.com/#terrain/16/59.3315/18.0313
     })
   });
 
@@ -73,6 +74,7 @@ target: document.getElementById('scale-line')
       //   source: new ol.source.OSM()
       // })
     
+
 
 scaleLineControl.setUnits('metric');
 
