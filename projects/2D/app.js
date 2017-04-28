@@ -35,6 +35,14 @@ function closeAssign() {
 }
 
 
+function formShow() {
+    document.getElementById("form-appointment").style.display = "block";
+    document.getElementById("bottominfo").style.height = "3vh";
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("mfb-component__wrap").style.paddingBottom = "4vh";
+    document.getElementById("scale-line").style.bottom = "4vh";
+    document.getElementById("bottomlabel").innerHTML = ""; 
+}
 
 /*** Map ***/
 
@@ -51,11 +59,11 @@ var scaleLineControl = new ol.control.ScaleLine({className: 'ol-scale-line',
 target: document.getElementById('scale-line')
 });
 
-  var stamenLayer = new ol.layer.Tile({
-    source: new ol.source.Stamen({
-      layer: 'terrain'  //http://maps.stamen.com/#terrain/16/59.3315/18.0313
-    })
-  });
+  // var stamenLayer = new ol.layer.Tile({
+  //   source: new ol.source.Stamen({
+  //     layer: 'terrain'  //http://maps.stamen.com/#terrain/16/59.3315/18.0313
+  //   })
+  // });
 
   var map = new ol.Map({
     controls: ol.control.defaults({
@@ -66,7 +74,9 @@ target: document.getElementById('scale-line')
       scaleLineControl
     ]),
     target: 'map',
-    layers: [stamenLayer],
+    layers: [       new ol.layer.Tile({
+         source: new ol.source.OSM()
+       })],
     view: view
   });
       // Old map
