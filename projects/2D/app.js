@@ -18,6 +18,7 @@ function closeAll() {
     document.getElementById("mfb-component__wrap").style.paddingBottom = "4vh";
     document.getElementById("scale-line").style.bottom = "4vh";
     document.getElementById("bottomlabel").innerHTML = ""; 
+    document.getElementById("form-appointment").style.display = "none";
 }
 
 function openAssign() {
@@ -44,6 +45,16 @@ function formShow() {
     document.getElementById("bottomlabel").innerHTML = ""; 
 }
 
+function reportShow() {
+  document.getElementById("rapporter").style.display = "block";
+  document.getElementById("uppdragsinfo").style.display = "none";
+}
+
+function uppdragShow() {
+  document.getElementById("rapporter").style.display = "none";
+  document.getElementById("uppdragsinfo").style.display = "block";
+}
+
 /*** Map ***/
 
 proj4.defs("EPSG:3006","+proj=utm +zone=33 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs");
@@ -59,11 +70,11 @@ var scaleLineControl = new ol.control.ScaleLine({className: 'ol-scale-line',
 target: document.getElementById('scale-line')
 });
 
-  // var stamenLayer = new ol.layer.Tile({
-  //   source: new ol.source.Stamen({
-  //     layer: 'terrain'  //http://maps.stamen.com/#terrain/16/59.3315/18.0313
-  //   })
-  // });
+  var stamenLayer = new ol.layer.Tile({
+    source: new ol.source.Stamen({
+      layer: 'terrain'  //http://maps.stamen.com/#terrain/16/59.3315/18.0313
+    })
+  });
 
   var map = new ol.Map({
     controls: ol.control.defaults({
@@ -74,9 +85,7 @@ target: document.getElementById('scale-line')
       scaleLineControl
     ]),
     target: 'map',
-    layers: [       new ol.layer.Tile({
-         source: new ol.source.OSM()
-       })],
+    layers: [stamenLayer],
     view: view
   });
       // Old map
