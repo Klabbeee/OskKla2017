@@ -2,17 +2,11 @@ import psycopg2
 import json
 from flask import Flask, request, send_from_directory
 from config import conn
-from OpenSSL import SSL
 
-import os
 
 tables = {'gas': {'arcs': 'gas_arcs', 'nodes':'gas_arcs_vertices_pgr', 'conn': 'gas_cust', 'station_id':259},
 'heating': {'arcs':'heat_arcs', 'nodes': 'heat_arcs_vertices_pgr', 'conn': 'heat_cust', 'station_id': 2},
 'water': {'arcs': 'vatten_arc', 'nodes':'vatten_arc_vertices_pgr', 'conn': 'vatten_cust', 'station_id':1394}}
-
-context = SSL.Context(SSL.SSLv23_METHOD)
-cer = os.path.join(os.path.dirname(__file__), 'udara.com.crt')
-key = os.path.join(os.path.dirname(__file__), 'udara.com.key')
 
 app = Flask(__name__, static_folder="projects")
 
@@ -168,5 +162,4 @@ def getBrokenCust(network_name,nodeSet):
 
 if __name__ == "__main__":
     app.debug = True
-    context = (cer, key)
-    app.run(host='10.100.20.97', port=5000, ssl_context=context)
+    app.run(host='10.100.20.97', port=5020)
