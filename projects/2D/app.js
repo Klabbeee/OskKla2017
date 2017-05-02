@@ -108,6 +108,56 @@ var geolocation = new ol.Geolocation({
 
 geolocation.setTracking(true);
 
+var marker = new ol.Overlay({
+  element: document.getElementById('marker')
+});
+
+function Mapsearch(){
+    //alert('search start');
+    var address = document.getElementById('search').value;
+    console.log(document.getElementById('search').value);
+    //alert(address);
+    var geocode_url="http://maps.googleapis.com/maps/api/geocode/json?sensor=false&address="
+
+    var geocoder = new google.maps.Geocoder();
+    //geocoder.setBaseCountryCode('Nepal');
+    geocoder.geocode({ 'address': address }, function (results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        var coordis = [results[0].geometry.location.lng(), results[0].geometry.location.lat()];
+        var GooglePos = new ol.geom.Point();
+        GooglePos.setCoordinates(coordis);
+        var CoordChange = GooglePos.transform('EPSG:4326', view.getProjection());
+        view.setCenter(CoordChange.getCoordinates());
+        view.setZoom(15);
+        marker.setPosition(CoordChange.getCoordinates());
+        marker.setPositioning('center-center');
+        marker.stopEvent;
+        console.log(marker);
+        marker.setMap(map);
+        map.addOverlay(marker);
+
+
+      }
+      else
+        alert('error: ' + status);
+
+    });
+
+    // var location = geocoder.getLatLng(address,
+    //     function(point) {
+    //         if (!point) {
+    //             alert(address + " not found");
+    //         } else {
+    //             //alert("going to "+address);
+    //             console.log(location);
+    //             console.log(point);
+    //             var loc = new ol.proj.fromLonLat(point.x,point.y);
+    //             map.setCenter(loc,3);
+    //         }
+    //     }
+    // );
+}
+
 
 // update the HTML page when the position changes.
 // geolocation.on('change', function() {
@@ -160,6 +210,7 @@ new ol.layer.Vector({
 
 function myLocation() {
   map.getView().setCenter(geolocation.getPosition());
+  console.log(geolocation.getPosition());
   var coordinates = geolocation.getPosition();
   document.getElementById("bottomlabel").innerHTML = coordinates;
   view.setZoom(14);

@@ -3,7 +3,7 @@
   <head>
     <link rel="stylesheet" href="https://openlayers.org/en/v4.1.0/css/ol.css" type="text/css">
     <script src="https://openlayers.org/en/v4.0.1/build/ol.js" type="text/javascript"></script>
-    <link href="../resources/lib/bootstrap-3.3.7/css/bootstrap.min.css"/>
+    <link href="../resources/lib/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="../resources/lib/style.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="../node_modules/mfb/src/mfb.css" rel="stylesheet"/>
@@ -13,6 +13,8 @@
     <script src="https://cdn.jsdelivr.net/bluebird/latest/bluebird.js"></script>
     <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
     <script src="./app.js"></script>
+    <script src='http://maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyD5WT-qxtXQpz9Wpks2zPLVBNd6CR11jm0'></script>
+
   </head>
   <body>
 
@@ -29,8 +31,10 @@
     <!-- Searchbox and menu button -->
     <div class="box">
       <div class="search-box">
-          <span href="javascript:void(0)" class="openbtn" onclick="openNav()">&#9776;</span>
-          <input type="search" id="search" placeholder="Sök plats/objekt" />
+          <span href="javascript:void(0)" class="openbtn">&#9776;</span>
+          <form action="javascript:Mapsearch();">
+            <input type="search" id="search" placeholder="Sök plats/objekt"/>
+          </form>
       </div>
     </div>
 
@@ -128,7 +132,7 @@
       <ul id="plain-menu" class="plain-menu">
         <li class="dropdown">
           <i class="material-icons">layers</i>
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lager</a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" onClick="nodeOnClick();arcOnClick();">Lager</a>
           <ul class="dropdown-menu-layer" role="menu">
             <li><a href="javascript:void(0)" onClick="nodeOnClick();">Lager 1</a></li>
             <li><a href="#" onClick="arcOnClick()">Lager 2</a></li>
@@ -138,7 +142,7 @@
         </li>
         <li>
           <i class="material-icons">assignments</i>
-          <a href="#" onClick="formShow();" >Uppgifter</a>
+          <a href="#" onClick="Mapsearch();">Uppgifter</a>
         </li>
         <hr>
         <li>
@@ -304,11 +308,8 @@
       </div>
     </div>
 
- 
-<!-- 
-    Vad är det här? 
-  <div id="info" style="display: none;"></div>
-  <p>
+  <div id="info" style="display: none;"></div> 
+<!--   <p>
     position accuracy : <code id="accuracy"></code>&nbsp;&nbsp;
     altitude : <code id="altitude"></code>&nbsp;&nbsp;
     altitude accuracy : <code id="altitudeAccuracy"></code>&nbsp;&nbsp;
@@ -319,10 +320,9 @@
 
 
 
-
-  <div href="javascript:void(0)" id="bottominfo" class="bottominfo" onclick="openBotInfo()">
+  <div href="javascript:void(0)" id=bottominfo class="bottominfo" onclick="openBotInfo()">
       <label id="bottomlabel" class="bottomlabel"></label>
-      <div id="infobox" class="infobox">
+      <div id=infobox class="infobox">
         
 
       </div>
@@ -333,8 +333,16 @@
 
   <!-- Map div -->
   <div href="javascript:void(0)" id="map" class="map" onclick="closeAll()"></div>
+  <div id="marker" title="Marker" style="display"></div>
+  </div>
   <div id="scale-line" class="scale-line"></div>
 
+<script>
+
+
+  init();
+
+</script>
 
   </body>
   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
